@@ -10,3 +10,4 @@ export { default as PostDetail } from './PostDetail';
 export { default as Footer } from './Footer';
 export { default as About } from './About';
 export { default as FeaturedPosts } from './FeaturedPosts';
+export { default as ThemeSwitcher } from './ThemeSwitcher';

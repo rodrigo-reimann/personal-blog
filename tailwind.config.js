@@ -1,5 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // Here, we set darkMode to 'class' to enable dark mode using the class attribute. 
+  // This means that when dark mode is enabled, the dark class will be added to the html element, 
+  // and we can use this class to apply different styles for dark mode.
+  darkMode: 'class',
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",

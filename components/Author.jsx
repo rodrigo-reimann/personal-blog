@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 
 const Author = ({ author }) => (
-  <div className="text-left mt-20 mb-8 p-12 relative rounded-lg bg-white shadow-lg bg-opacity-20">
-    <div className="absolute left-0 right-0 -top-14">
+  <div className="text-left mt-20 mb-8 p-8 relative rounded-lg shadow-lg dark:bg-gray-800 dark:text-white">
+    <div className="absolute left-0 right-0 -top-12">
       <Image
         unoptimized
         alt={author.name}

@@ -60,8 +60,8 @@ const CommentsForm = ({ slug }) => {
     }
 
     return (
-        <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-            <h3 className="text-black text-xl mb-8 font-semibold border-b pb-4">Leave a Comment</h3>
+        <div className="shadow-lg rounded-lg p-8 pb-12 mb-8 dark:bg-gray-800 dark:text-white">
+            <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a Comment</h3>
             <div className=" grid grid-cols-1 gap-4 mb-4">
                 <textarea 
                     ref={commentEl} 
@@ -89,7 +89,7 @@ const CommentsForm = ({ slug }) => {
             <div className="grid grid-cols-1 gap-4 mb-4">
                 <div>
                     <input ref={storeDataEl} type="checkbox" id="storeData" name="storeData" value={true}/>
-                    <label className="text-gray-500 cursor-pointer ml-2 text-base" htmlFor="storeData">Save my e-mail and name for the next time I comment</label>
+                    <label className="text-gray-500 cursor-pointer ml-2 text-base dark:text-white" htmlFor="storeData">Save my e-mail and name for the next time I comment</label>
                 </div>
             </div>
             {/* This is a conditional rendering statement using the logical AND (&&) operator. It checks if the error state is 

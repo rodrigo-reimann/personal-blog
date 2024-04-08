@@ -13,8 +13,8 @@ const FeaturedPosts = () => {
     }, [])
 
     return (
-        <div className='bg-white shadow-lg rounded-lg p-8 mb-8'>
-            <h3 className='text-xl text-black mb-8 font-semibold border-b pb-4'>
+        <div className='bg-white shadow-lg rounded-lg p-8 mb-8 dark:bg-gray-800 dark:text-white'>
+            <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
                 Most Popular Pages
             </h3>
             {featuredPosts.map((post) => (
@@ -29,7 +29,7 @@ const FeaturedPosts = () => {
                         />
                     </div>
                     <div className='flex-grow ml-4'>
-                        <Link href={`/post/${post.slug}`} key={post.title} className='text-md text-black hover:underline'>
+                        <Link href={`/post/${post.slug}`} key={post.title} className='text-md hover:underline'>
                             {post.title}
                         </Link>
                     </div>
