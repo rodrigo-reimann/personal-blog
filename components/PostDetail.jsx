@@ -2,8 +2,28 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import moment from "moment";
+import Link from 'next/link'
+import { 
+  FacebookShareButton,
+  EmailShareButton,
+  LinkedinShareButton,
+  RedditShareButton,
+  TwitterShareButton,
+  WhatsappShareButton, 
+} from "react-share";
+import {
+  FacebookIcon,
+  EmailIcon,
+  LinkedinIcon,
+  RedditIcon,
+  XIcon,
+  WhatsappIcon,
+} from "react-share";
 
 const PostDetail = ({ post }) => {
+    const baseUrl = "https://techtavern.io";
+    const postUrl = `${baseUrl}/${post.slug}`
+    
     // This function transforms a piece of text content based on its formatting and type
     const getContentFragment = (index, text, obj, type) => {
         let modifiedText = text;
@@ -59,8 +79,8 @@ const PostDetail = ({ post }) => {
             <div className="px-4 lg:px-0">
                 <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
                 <div className="flex items-left mb-4 lg:mb-0 w-full">
-                    <div className='block lg:flex text-left items-left justify-left mb-8 w-full '>
-                        <div className='flex items-left justify-left mb-4 lg:mb-0 w-full lg:w-auto mr-8'>
+                    <div className='block lg:flex text-left items-left justify-left mb-8 w-full'>
+                        <div className='flex items-start justify-left mb-4 lg:mb-0 w-full lg:w-auto mr-8'>
                             <img
                                 alt={post.author.name}
                                 height='30px'
@@ -74,11 +94,42 @@ const PostDetail = ({ post }) => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 inline mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
-                            <span className="ml-1">
+                            <span className="ml-1 mr-4">
                                 {moment(post.createdAt).format('MMM DD, YYYY')}
                             </span>
                         </div>
+                        <div className='flex items-start justify-left mb-4 lg:mb-0 w-full lg:w-auto mr-8'>
+                          <p>Topics:</p>
+                            {post.categories.map((category) => (
+                              <Link href={`/category/${category.slug}`} key={category.slug} className="inline align-middle text-gray-700 ml-2 text-base dark:text-white hover:underline">
+                                <span>
+                                  {category.name}
+                                </span>
+                              </Link>
+                            ))}
+                        </div>
                     </div>
+                </div>
+                <div className="flex items-center mb-8 lg:mb-8 w-full space-x-2">
+                    <p className="mr-2 font-bold text-sm">Share this:</p>
+                    <FacebookShareButton url={postUrl}>
+                      <FacebookIcon size={32} round={true} />
+                    </FacebookShareButton> 
+                    <EmailShareButton url={postUrl}>
+                      <EmailIcon size={32} round={true} />
+                    </EmailShareButton> 
+                    <LinkedinShareButton url={postUrl}>
+                      <LinkedinIcon size={32} round={true} />
+                    </LinkedinShareButton> 
+                    <RedditShareButton url={postUrl}>
+                      <RedditIcon size={32} round={true} />
+                    </RedditShareButton> 
+                    <TwitterShareButton url={postUrl}>
+                      <XIcon size={32} round={true} />
+                    </TwitterShareButton> 
+                    <WhatsappShareButton url={postUrl}>
+                      <WhatsappIcon size={32} round={true} />
+                    </WhatsappShareButton> 
                 </div>
 
                 {/* The function iteratively processes each piece of the post's content, transforming nested structures into 

@@ -4,7 +4,6 @@ import moment from 'moment';
 import Link from 'next/link';
 
 const PostCard = ({post}) => {
-    console.log(post);
     return (
         <div className='p-8 lg:p-10 pb-12 mb-8 shadow-lg dark:bg-gray-800 dark:rounded-lg dark:text-white'>
             <div className='relative overflow-hidden pb-80 mb-6'>
