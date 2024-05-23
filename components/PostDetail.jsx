@@ -23,7 +23,7 @@ import {
 const PostDetail = ({ post }) => {
     const baseUrl = "https://techtavern.io";
     const postUrl = `${baseUrl}/${post.slug}`
-    
+
     // This function transforms a piece of text content based on its formatting and type
     const getContentFragment = (index, text, obj, type) => {
         let modifiedText = text;

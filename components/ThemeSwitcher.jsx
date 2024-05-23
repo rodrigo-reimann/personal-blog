@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useDarkSide from '@/hooks/useDarkSide'; // Assuming correct path to useDarkSide hook
+import useDarkSide from '@/hooks/useDarkSide';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 export default function ThemeSwitcher() {
